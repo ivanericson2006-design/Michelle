@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Card for Michelle</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #1f2a3a 0%, #2c3e50 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', 'Inter', 'Arial', sans-serif;
+      padding: 1.5rem;
+    }
+
+    /* main card */
+    .card {
+      max-width: 700px;
+      width: 100%;
+      background: #f5f7fa;
+      border-radius: 18px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.55),
+                  0 0 0 1px rgba(255, 255, 255, 0.08);
+      padding: 2.8rem 3rem;
+      position: relative;
+      overflow: hidden;
+      animation: slideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* subtle top accent bar */
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, #2c3e50, #4a6fa5, #6b8cba);
+    }
+
+    @keyframes slideUp {
+      0% { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* small label */
+    .label {
+      font-size: 0.8rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #6b7c93;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+    }
+
+    /* title */
+    h1 {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-size: 2.6rem;
+      font-weight: 400;
+      color: #1f2a3a;
+      line-height: 1.15;
+      margin-bottom: 0.3rem;
+    }
+
+    .name {
+      display: block;
+      font-size: 3.4rem;
+      font-weight: 700;
+      color: #2c3e50;
+      letter-spacing: -1px;
+      margin-top: 0.3rem;
+      word-break: break-word;
+    }
+
+    /* divider */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, #1f2a3a, #c5ced8, transparent);
+      margin: 1.8rem 0;
+    }
+
+    /* message body */
+    .message {
+      font-size: 1.12rem;
+      line-height: 1.75;
+      color: #3d4a5c;
+    }
+
+    .message p {
+      margin-bottom: 1rem;
+    }
+
+    .message .highlight {
+      font-weight: 600;
+      color: #1f2a3a;
+    }
+
+    .message .quote {
+      margin: 1.6rem 0;
+      padding: 0.9rem 1.3rem;
+      border-left: 3px solid #4a6fa5;
+      background: #eaeff5;
+      font-style: italic;
+      color: #4a5a70;
+      border-radius: 0 8px 8px 0;
+      font-size: 1.05rem;
+    }
+
+    /* icon row */
+    .icon-row {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 0.9rem;
+      margin: 1.8rem 0 0.5rem;
+      font-size: 1.8rem;
+      opacity: 0.85;
+    }
+
+    .icon-row span {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .icon-row span:nth-child(2) { animation-delay: 0.4s; }
+    .icon-row span:nth-child(3) { animation-delay: 0.8s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    /* signature */
+    .signature {
+      margin-top: 2rem;
+      padding-top: 1.4rem;
+      border-top: 1px solid #d5dde6;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1rem;
+      color: #5a6a7e;
+    }
+
+    .signature .from {
+      font-weight: 500;
+    }
+
+    .signature .heart {
+      font-size: 1.4rem;
+    }
+
+    /* responsiveness */
+    @media (max-width: 550px) {
+      body { padding: 0.8rem; }
+      .card { padding: 2rem 1.6rem; border-radius: 14px; }
+      h1 { font-size: 2rem; }
+      .name { font-size: 2.6rem; }
+      .message { font-size: 1rem; }
+      .label { letter-spacing: 3px; font-size: 0.7rem; }
+      .icon-row { font-size: 1.5rem; }
+    }
+
+    @media (max-width: 380px) {
+      .name { font-size: 2.1rem; }
+      .message { font-size: 0.95rem; }
+      .signature { flex-direction: column; gap: 0.6rem; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="label">Happy Birthday</div>
+
+    <h1>
+      Celebrating
+      <span class="name">Michelle</span>
+    </h1>
+
+    <div class="divider"></div>
+
+    <div class="message">
+      <p>
+        To my cousin <span class="highlight">Michelle</span> — wishing you a birthday that's as
+        sharp, genuine, and one-of-a-kind as you are.
+      </p>
+      <p>
+        Here's to another year of good decisions, better stories, and the people who matter most.
+        Make it count.
+      </p>
+      <div class="quote">
+        “The more you praise and celebrate your life, the more there is in life to celebrate.”
+      </div>
+      <p>Enjoy your day. You've earned it. 🎉</p>
+    </div>
+
+    <div class="icon-row">
+      <span>🎂</span>
+      <span>🎈</span>
+      <span>🥂</span>
+    </div>
+
+    <div class="signature">
+      <span class="from">— With love, your Cute cousin</span>
+      <span class="heart">🤍</span>
+    </div>
+  </div>
+</body>
+</html>
